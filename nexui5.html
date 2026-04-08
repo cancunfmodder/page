@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>NexUI5 1.1 · Samsung A41</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <style>
+    :root {
+      --bg: #050816;
+      --accent: #4f46e5;
+      --text: #e5e7eb;
+      --muted: #9ca3af;
+      --card: #111827;
+      --border: #1f2937;
+      --danger: #ef4444;
+      --success: #22c55e;
+      --shadow-subtle: 0 10px 30px rgba(0, 0, 0, 0.35);
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: system-ui, sans-serif;
+      background: radial-gradient(circle at top, #1f2937 0, #020617 45%, #000 100%);
+      color: var(--text);
+      min-height: 100vh;
+      line-height: 1.6;
+    }
+    a { color: inherit; text-decoration: none; }
+    .page { max-width: 900px; margin: 0 auto; padding: 32px 18px 60px; }
+    header {
+      display: flex; justify-content: space-between; align-items: center;
+      margin-bottom: 32px;
+    }
+    .logo { display: flex; align-items: center; gap: 10px; }
+    .logo-mark {
+      width: 38px; height: 38px; border-radius: 14px;
+      background: conic-gradient(from 180deg, #4f46e5, #22c55e, #ec4899, #4f46e5);
+      padding: 2px;
+    }
+    .logo-inner {
+      width: 100%; height: 100%; border-radius: 12px;
+      background: #020617;
+      display: flex; align-items: center; justify-content: center;
+      font-weight: 700; font-size: 0.9rem; letter-spacing: 0.06em;
+    }
+    .logo-text { display: flex; flex-direction: column; }
+    .logo-text span:first-child { font-weight: 600; }
+    .logo-text span:last-child { font-size: 0.8rem; color: var(--muted); }
+    nav { display: flex; gap: 14px; }
+    nav a {
+      padding: 6px 12px; border-radius: 999px;
+      color: var(--muted); border: 1px solid transparent;
+      transition: 0.18s ease;
+    }
+    nav a:hover {
+      color: var(--text);
+      border-color: rgba(148, 163, 184, 0.4);
+      background: rgba(15, 23, 42, 0.8);
+    }
+    .section {
+      padding: 18px;
+      border-radius: 20px;
+      background: rgba(15, 23, 42, 0.96);
+      border: 1px solid rgba(31, 41, 55, 0.9);
+      box-shadow: var(--shadow-subtle);
+    }
+    .title { font-size: 1.6rem; font-weight: 600; margin-bottom: 4px; }
+    .subtitle { font-size: 0.9rem; color: var(--muted); margin-bottom: 12px; }
+    .badge-row { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 12px; }
+    .badge {
+      font-size: 0.75rem; padding: 4px 8px;
+      border-radius: 999px;
+      border: 1px solid rgba(55, 65, 81, 0.9);
+      color: var(--muted);
+    }
+    .badge-accent { border-color: rgba(129, 140, 248, 0.9); }
+    .image-wrap {
+      margin: 14px 0;
+      border-radius: 16px;
+      overflow: hidden;
+      border: 1px solid rgba(55, 65, 81, 0.9);
+      background: #020617;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .image-wrap img {
+      display: block;
+      width: 100%;
+      height: auto;
+      max-height: 260px;
+      object-fit: contain;
+      background: #020617;
+    }
+    .two-col {
+      display: grid;
+      grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr);
+      gap: 16px;
+      margin-top: 12px;
+      font-size: 0.9rem;
+    }
+    .block-title { font-weight: 600; margin-bottom: 4px; }
+    .meta-list { font-size: 0.85rem; color: var(--muted); }
+    .meta-list li { margin-left: 16px; margin-bottom: 3px; }
+    .btn-row { display: flex; gap: 8px; flex-wrap: wrap; margin-top: 12px; }
+    .btn {
+      font-size: 0.8rem; padding: 6px 12px;
+      border-radius: 999px;
+      border: 1px solid rgba(55, 65, 81, 0.9);
+      color: var(--muted);
+      text-decoration: none;
+      transition: 0.16s ease;
+    }
+    .btn-primary {
+      border-color: rgba(129, 140, 248, 0.9);
+      color: #e5e7eb;
+    }
+    .btn:hover {
+      border-color: rgba(129, 140, 248, 0.9);
+      color: #e5e7eb;
+    }
+    .support {
+      font-size: 0.85rem;
+      color: var(--muted);
+      margin-top: 10px;
+    }
+    .support a { text-decoration: underline; }
+    footer {
+      margin-top: 20px; font-size: 0.75rem; color: var(--muted);
+      display: flex; justify-content: space-between; flex-wrap: wrap;
+    }
+    @media (max-width: 700px) {
+      .two-col { grid-template-columns: minmax(0, 1fr); }
+      header { flex-direction: column; align-items: flex-start; gap: 10px; }
+    }
+  </style>
+</head>
+<body>
+<div class="page">
+
+  <header>
+    <div class="logo">
+      <div class="logo-mark"><div class="logo-inner">RB</div></div>
+      <div class="logo-text">
+        <span>Robert</span>
+        <span>Android ports & devices</span>
+      </div>
+    </div>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="projects.html">Projects</a>
+      <a href="nexui5-changelog.html">Changelog</a>
+    </nav>
+  </header>
+
+  <section class="section">
+    <h1 class="title">NexUI5 1.1 · Samsung A41</h1>
+    <p class="subtitle">
+      A OneUI 5–based custom ROM for the Samsung A41, with a smoother OneUI 5.1 launcher,
+      OneUI 5.1.1 clock, Zest Menu, custom boot logo, and root preinstalled. Beta and discontinued.
+    </p>
+
+    <div class="badge-row">
+      <span class="badge badge-accent">Device: Samsung A41</span>
+      <span class="badge">Base: OneUI 5</span>
+      <span class="badge">Status: Beta</span>
+      <span class="badge">Development: Discontinued</span>
+    </div>
+
+    <div class="image-wrap">
+      <!-- Your logo/screenshot path -->
+      <img src="assets/nexui5A41/logo.png" alt="NexUI5 1.1 on Samsung A41">
+    </div>
+
+    <div class="two-col">
+      <div>
+        <div class="block-title">Overview</div>
+        <p>
+          NexUI5 1.1 is built on OneUI 5 for the Samsung A41. The focus is on a smoother launcher,
+          a modern clock, and a clean UI while keeping the ROM usable for daily tasks (with some
+          important bugs you must accept before flashing).
+        </p>
+        <p style="margin-top: 6px;">
+          The project reached a beta stage and is now discontinued. The final beta is still available
+          for users who understand the limitations.
+        </p>
+      </div>
+      <div>
+        <div class="block-title">Features</div>
+        <ul class="meta-list">
+          <li>OneUI 5.1 launcher (smoother)</li>
+          <li>Clock from OneUI 5.1.1</li>
+          <li>Zest Menu</li>
+          <li>Custom boot logo</li>
+          <li>Root preinstalled</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="two-col" style="margin-top: 16px;">
+      <div>
+        <div class="block-title">What works</div>
+        <ul class="meta-list">
+          <li>System UI and general navigation</li>
+          <li>Wi‑Fi and mobile data</li>
+          <li>Audio (speaker, basic media playback)</li>
+        </ul>
+      </div>
+      <div>
+        <div class="block-title">Known broken</div>
+        <ul class="meta-list">
+          <li>Bluetooth</li>
+          <li>Camera</li>
+          <li>Flash/torch</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="block-title" style="margin-top: 16px;">How to flash</div>
+    <ul class="meta-list">
+      <li>1. Flash Stock ROM</li>
+      <li>2. Flash TWRP and VBMETA in AP</li>
+      <li>3. Flash NexUI.zip</li>
+      <li>4. Flash Kernel.zip</li>
+      <li>5. Flash Guard.zip</li>
+      <li>6. Format data and reboot</li>
+    </ul>
+
+    <div class="btn-row">
+      <a href="https://drive.google.com/file/d/1TR1t-UDUW-xexRZw9NACjUT0iFRagrYi/view?usp=sharing" class="btn">Download TWRP</a>
+      <a href="https://drive.google.com/file/d/16iJXesqx9HuAN5P7HkRcsqc6u8-NORje/view?usp=sharing" class="btn">Download VBMETA</a>
+      <a href="https://drive.google.com/file/d/1sqCUWNZZu_BMdF54kBDAwz2AznFfd6-q/view?usp=sharing" class="btn btn-primary">Download NexUI5 1.1</a>
+      <a href="https://drive.google.com/file/d/1VMq8u8WcQbMneUQDpTRox3yJ-GGBl79V/view?usp=sharing" class="btn">Download Kernel</a>
+      <a href="https://t.me/updates50prouserports/92" class="btn">Download Guard</a>
+      <a href="https://t.me/ss50prouserports/11" class="btn">Screenshots (Telegram)</a>
+      <a href="nexui5-changelog.html" class="btn">Changelog & Known Issues</a>
+    </div>
+
+    <p class="support">
+      Support group: <a href="https://t.me/chat50prouserports" target="_blank">https://t.me/chat50prouserports</a>
+    </p>
+  </section>
+
+  <footer>
+    <span>© <span id="year"></span> Robert</span>
+    <span>NexUI5 1.1 · Samsung A41</span>
+  </footer>
+
+</div>
+<script>
+  document.getElementById("year").textContent = new Date().getFullYear();
+</script>
+</body>
+</html>

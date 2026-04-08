@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Robert · Projects</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <style>
+    :root {
+      --bg: #050816;
+      --accent: #4f46e5;
+      --text: #e5e7eb;
+      --muted: #9ca3af;
+      --card: #111827;
+      --border: #1f2937;
+      --shadow-subtle: 0 10px 30px rgba(0, 0, 0, 0.35);
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: system-ui, sans-serif;
+      background: radial-gradient(circle at top, #1f2937 0, #020617 45%, #000 100%);
+      color: var(--text);
+      min-height: 100vh;
+      line-height: 1.6;
+    }
+    a { color: inherit; text-decoration: none; }
+    .page { max-width: 1100px; margin: 0 auto; padding: 32px 18px 60px; }
+    header {
+      display: flex; justify-content: space-between; align-items: center;
+      margin-bottom: 32px;
+    }
+    .logo { display: flex; align-items: center; gap: 10px; }
+    .logo-mark {
+      width: 38px; height: 38px; border-radius: 14px;
+      background: conic-gradient(from 180deg, #4f46e5, #22c55e, #ec4899, #4f46e5);
+      padding: 2px;
+    }
+    .logo-inner {
+      width: 100%; height: 100%; border-radius: 12px;
+      background: #020617;
+      display: flex; align-items: center; justify-content: center;
+      font-weight: 700; font-size: 0.9rem; letter-spacing: 0.06em;
+    }
+    .logo-text { display: flex; flex-direction: column; }
+    .logo-text span:first-child { font-weight: 600; }
+    .logo-text span:last-child { font-size: 0.8rem; color: var(--muted); }
+    nav { display: flex; gap: 14px; }
+    nav a {
+      padding: 6px 12px; border-radius: 999px;
+      color: var(--muted); border: 1px solid transparent;
+      transition: 0.18s ease;
+    }
+    nav a:hover {
+      color: var(--text);
+      border-color: rgba(148, 163, 184, 0.4);
+      background: rgba(15, 23, 42, 0.8);
+    }
+    .section {
+      margin-top: 10px;
+      padding: 18px;
+      border-radius: 20px;
+      background: rgba(15, 23, 42, 0.96);
+      border: 1px solid rgba(31, 41, 55, 0.9);
+      box-shadow: var(--shadow-subtle);
+    }
+    .section-title { font-size: 1.3rem; font-weight: 600; }
+    .section-subtitle { font-size: 0.85rem; color: var(--muted); }
+    .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 12px; margin-top: 14px;
+    }
+    .project-card {
+      background: rgba(15, 23, 42, 0.96);
+      border-radius: 14px;
+      border: 1px solid rgba(55, 65, 81, 0.9);
+      padding: 12px;
+      font-size: 0.85rem;
+    }
+    .project-title { font-weight: 600; margin-bottom: 4px; }
+    .project-meta { font-size: 0.8rem; color: var(--muted); margin-bottom: 6px; }
+    .project-links { display: flex; gap: 6px; flex-wrap: wrap; margin-top: 6px; }
+    .project-link {
+      font-size: 0.75rem; padding: 4px 8px;
+      border-radius: 999px;
+      border: 1px solid rgba(55, 65, 81, 0.9);
+      color: var(--muted);
+      transition: 0.16s ease;
+    }
+    .project-link:hover {
+      border-color: rgba(129, 140, 248, 0.9);
+      color: #e5e7eb;
+    }
+    footer {
+      margin-top: 20px; font-size: 0.75rem; color: var(--muted);
+      display: flex; justify-content: space-between; flex-wrap: wrap;
+    }
+    @media (max-width: 600px) {
+      header { flex-direction: column; align-items: flex-start; gap: 10px; }
+    }
+  </style>
+</head>
+<body>
+<div class="page">
+
+  <header>
+    <div class="logo">
+      <div class="logo-mark"><div class="logo-inner">RB</div></div>
+      <div class="logo-text">
+        <span>Robert</span>
+        <span>Android ports & devices</span>
+      </div>
+    </div>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="projects.html">Projects</a>
+      <a href="nexui5.html">NexUI5</a>
+    </nav>
+  </header>
+
+  <section class="section">
+    <h1 class="section-title">Projects</h1>
+    <p class="section-subtitle">
+      A list of my ROM-related work. Right now, the main project is NexUI5 1.1 for the Samsung A41.
+    </p>
+
+    <div class="projects-grid">
+      <article class="project-card">
+        <div class="project-title">NexUI5 1.1 · Samsung A41</div>
+        <div class="project-meta">
+          OneUI 5–based custom ROM · Beta · Discontinued
+        </div>
+        <p>
+          NexUI5 1.1 is a OneUI 5–based ROM for the Samsung A41, with a smoother OneUI 5.1 launcher,
+          OneUI 5.1.1 clock, Zest Menu, custom boot logo, and root preinstalled. Development is
+          discontinued, but the last beta is still available.
+        </p>
+        <div class="project-links">
+          <a href="nexui5.html" class="project-link">Project page</a>
+          <a href="nexui5-changelog.html" class="project-link">Changelog & issues</a>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <footer>
+    <span>© <span id="year"></span> Robert</span>
+    <span>Personal hobby project</span>
+  </footer>
+
+</div>
+<script>
+  document.getElementById("year").textContent = new Date().getFullYear();
+</script>
+</body>
+</html>

@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>NexUI5 1.1 · Changelog & Known Issues</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <style>
+    :root {
+      --bg: #050816;
+      --accent: #4f46e5;
+      --text: #e5e7eb;
+      --muted: #9ca3af;
+      --card: #111827;
+      --border: #1f2937;
+      --danger: #ef4444;
+      --shadow-subtle: 0 10px 30px rgba(0, 0, 0, 0.35);
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: system-ui, sans-serif;
+      background: radial-gradient(circle at top, #1f2937 0, #020617 45%, #000 100%);
+      color: var(--text);
+      min-height: 100vh;
+      line-height: 1.6;
+    }
+    a { color: inherit; text-decoration: none; }
+    .page { max-width: 900px; margin: 0 auto; padding: 32px 18px 60px; }
+    header {
+      display: flex; justify-content: space-between; align-items: center;
+      margin-bottom: 32px;
+    }
+    .logo { display: flex; align-items: center; gap: 10px; }
+    .logo-mark {
+      width: 38px; height: 38px; border-radius: 14px;
+      background: conic-gradient(from 180deg, #4f46e5, #22c55e, #ec4899, #4f46e5);
+      padding: 2px;
+    }
+    .logo-inner {
+      width: 100%; height: 100%; border-radius: 12px;
+      background: #020617;
+      display: flex; align-items: center; justify-content: center;
+      font-weight: 700; font-size: 0.9rem; letter-spacing: 0.06em;
+    }
+    .logo-text { display: flex; flex-direction: column; }
+    .logo-text span:first-child { font-weight: 600; }
+    .logo-text span:last-child { font-size: 0.8rem; color: var(--muted); }
+    nav { display: flex; gap: 14px; }
+    nav a {
+      padding: 6px 12px; border-radius: 999px;
+      color: var(--muted); border: 1px solid transparent;
+      transition: 0.18s ease;
+    }
+    nav a:hover {
+      color: var(--text);
+      border-color: rgba(148, 163, 184, 0.4);
+      background: rgba(15, 23, 42, 0.8);
+    }
+    .section {
+      padding: 18px;
+      border-radius: 20px;
+      background: rgba(15, 23, 42, 0.96);
+      border: 1px solid rgba(31, 41, 55, 0.9);
+      box-shadow: var(--shadow-subtle);
+    }
+    .title { font-size: 1.5rem; font-weight: 600; margin-bottom: 4px; }
+    .subtitle { font-size: 0.9rem; color: var(--muted); margin-bottom: 12px; }
+    .block-title { font-weight: 600; margin-top: 12px; margin-bottom: 4px; }
+    .list { font-size: 0.9rem; color: var(--muted); }
+    .list li { margin-left: 18px; margin-bottom: 3px; }
+    .note {
+      font-size: 0.8rem; color: var(--muted);
+      margin-top: 10px; border-left: 2px solid rgba(148, 163, 184, 0.6);
+      padding-left: 10px;
+    }
+    .btn-row { display: flex; gap: 8px; flex-wrap: wrap; margin-top: 14px; }
+    .btn {
+      font-size: 0.8rem; padding: 6px 12px;
+      border-radius: 999px;
+      border: 1px solid rgba(55, 65, 81, 0.9);
+      color: var(--muted);
+      text-decoration: none;
+      transition: 0.16s ease;
+    }
+    .btn:hover {
+      border-color: rgba(129, 140, 248, 0.9);
+      color: #e5e7eb;
+    }
+    .btn-primary {
+      border-color: rgba(129, 140, 248, 0.9);
+      color: #e5e7eb;
+    }
+    footer {
+      margin-top: 20px; font-size: 0.75rem; color: var(--muted);
+      display: flex; justify-content: space-between; flex-wrap: wrap;
+    }
+    @media (max-width: 700px) {
+      header { flex-direction: column; align-items: flex-start; gap: 10px; }
+    }
+  </style>
+</head>
+<body>
+<div class="page">
+
+  <header>
+    <div class="logo">
+      <div class="logo-mark"><div class="logo-inner">RB</div></div>
+      <div class="logo-text">
+        <span>Robert</span>
+        <span>Android ports & devices</span>
+      </div>
+    </div>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="projects.html">Projects</a>
+      <a href="nexui5.html">NexUI5</a>
+    </nav>
+  </header>
+
+  <section class="section">
+    <h1 class="title">NexUI5 1.1 · Changelog & Known Issues</h1>
+    <p class="subtitle">
+      Final beta snapshot of NexUI5 1.1 for the Samsung A41. Development is discontinued.
+    </p>
+
+    <div class="block-title">Changelog (final beta)</div>
+    <ul class="list">
+      <li>Base updated to OneUI 5 for Samsung A41.</li>
+      <li>Integrated OneUI 5.1 launcher for smoother home experience.</li>
+      <li>Clock app from OneUI 5.1.1.</li>
+      <li>Added Zest Menu.</li>
+      <li>Custom boot logo added.</li>
+      <li>Root preinstalled for easier modding.</li>
+      <li>System boots and is usable for basic daily tasks.</li>
+      <li>Wi‑Fi and mobile data functional.</li>
+      <li>Audio playback working (speaker, basic media).</li>
+    </ul>
+
+    <div class="block-title">Known issues</div>
+    <ul class="list">
+      <li>Bluetooth not working.</li>
+      <li>Camera not working.</li>
+      <li>Flash/torch not working.</li>
+      <li>No further fixes planned (project discontinued).</li>
+    </ul>
+
+    <div class="block-title">How to flash</div>
+    <ul class="list">
+      <li>1. Flash Stock ROM.</li>
+      <li>2. Flash TWRP and VBMETA in AP.</li>
+      <li>3. Flash NexUI.zip.</li>
+      <li>4. Flash Kernel.zip.</li>
+      <li>5. Flash Guard.zip.</li>
+      <li>6. Format data and reboot.</li>
+    </ul>
+
+    <p class="note">
+      This ROM is provided as‑is, with no active development. If you decide to flash it,
+      you should be comfortable with the bugs listed above and always keep a backup of your data.
+    </p>
+
+    <div class="btn-row">
+      <a href="https://drive.google.com/file/d/1sqCUWNZZu_BMdF54kBDAwz2AznFfd6-q/view?usp=sharing" class="btn btn-primary">Download NexUI5 1.1</a>
+      <a href="https://t.me/ss50prouserports/11" class="btn">Screenshots (Telegram)</a>
+      <a href="nexui5.html" class="btn">Back to NexUI5 page</a>
+      <a href="projects.html" class="btn">Back to Projects</a>
+    </div>
+  </section>
+
+  <footer>
+    <span>© <span id="year"></span> Robert</span>
+    <span>NexUI5 1.1 · Samsung A41</span>
+  </footer>
+
+</div>
+<script>
+  document.getElementById("year").textContent = new Date().getFullYear();
+</script>
+</body>
+</html>
